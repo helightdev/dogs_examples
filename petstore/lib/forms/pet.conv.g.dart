@@ -13,67 +13,23 @@ import 'package:petstore/forms/pet.dart' as gen4;
 import 'package:dogs_forms/src/form.dart' as gen5;
 import 'package:petstore/forms/pet.dart';
 
-class PetFormDataConverter
-    extends gen.DefaultStructureConverter<gen4.PetFormData> {
+class PetFormDataConverter extends gen.DefaultStructureConverter<gen4.PetFormData> {
   PetFormDataConverter()
       : super(
             struct: const gen.DogStructure<gen4.PetFormData>(
                 'PetFormData',
                 gen.StructureConformity.basic,
                 [
-                  gen.DogStructureField(
-                      gen.QualifiedTerminal<gen0.String>(),
-                      gen.TypeToken<gen0.String>(),
-                      null,
-                      gen.IterableKind.none,
-                      'name',
-                      false,
-                      false,
-                      [gen1.notBlank]),
-                  gen.DogStructureField(
-                      gen.QualifiedTerminal<gen0.String>(),
-                      gen.TypeToken<gen0.String>(),
-                      null,
-                      gen.IterableKind.none,
-                      'category',
-                      false,
-                      false, []),
-                  gen.DogStructureField(
-                      gen.QualifiedTypeTreeN<gen0.List<gen0.String>,
-                              gen0.List<dynamic>>(
-                          [gen.QualifiedTerminal<gen0.String>()]),
-                      gen.TypeToken<gen0.String>(),
-                      null,
-                      gen.IterableKind.list,
-                      'photoUrls',
-                      false,
-                      false,
-                      [gen2.UrlValidator()]),
-                  gen.DogStructureField(
-                      gen.QualifiedTypeTreeN<gen0.List<gen0.String>,
-                              gen0.List<dynamic>>(
-                          [gen.QualifiedTerminal<gen0.String>()]),
-                      gen.TypeToken<gen0.String>(),
-                      null,
-                      gen.IterableKind.list,
-                      'tags',
-                      false,
-                      false,
-                      []),
-                  gen.DogStructureField(
-                      gen.QualifiedTerminal<gen3.PetStatus>(),
-                      gen.TypeToken<gen3.PetStatus>(),
-                      null,
-                      gen.IterableKind.none,
-                      'status',
-                      false,
-                      true, [])
+                  gen.DogStructureField(gen.QualifiedTerminal<gen0.String>(), gen.TypeToken<gen0.String>(), null, gen.IterableKind.none, 'name', false, false, [gen1.notBlank]),
+                  gen.DogStructureField(gen.QualifiedTerminal<gen0.String>(), gen.TypeToken<gen0.String>(), null, gen.IterableKind.none, 'category', false, false, []),
+                  gen.DogStructureField(gen.QualifiedTypeTreeN<gen0.List<gen0.String>, gen0.List<dynamic>>([gen.QualifiedTerminal<gen0.String>()]), gen.TypeToken<gen0.String>(), null,
+                      gen.IterableKind.list, 'photoUrls', false, false, [gen2.UrlValidator()]),
+                  gen.DogStructureField(gen.QualifiedTypeTreeN<gen0.List<gen0.String>, gen0.List<dynamic>>([gen.QualifiedTerminal<gen0.String>()]), gen.TypeToken<gen0.String>(), null,
+                      gen.IterableKind.list, 'tags', false, false, []),
+                  gen.DogStructureField(gen.QualifiedTerminal<gen3.PetStatus>(), gen.TypeToken<gen3.PetStatus>(), null, gen.IterableKind.none, 'status', false, true, [])
                 ],
                 [gen5.AutoForm(decorator: gen4.PetFormDecorator())],
-                gen.ObjectFactoryStructureProxy<gen4.PetFormData>(
-                    _activator,
-                    [_$name, _$category, _$photoUrls, _$tags, _$status],
-                    _values)));
+                gen.ObjectFactoryStructureProxy<gen4.PetFormData>(_activator, [_$name, _$category, _$photoUrls, _$tags, _$status], _values)));
 
   static dynamic _$name(gen4.PetFormData obj) => obj.name;
 
@@ -85,12 +41,10 @@ class PetFormDataConverter
 
   static dynamic _$status(gen4.PetFormData obj) => obj.status;
 
-  static List<dynamic> _values(gen4.PetFormData obj) =>
-      [obj.name, obj.category, obj.photoUrls, obj.tags, obj.status];
+  static List<dynamic> _values(gen4.PetFormData obj) => [obj.name, obj.category, obj.photoUrls, obj.tags, obj.status];
 
   static gen4.PetFormData _activator(List list) {
-    return gen4.PetFormData(list[0], list[1], list[2].cast<gen0.String>(),
-        list[3].cast<gen0.String>(), list[4]);
+    return gen4.PetFormData(list[0], list[1], list[2].cast<gen0.String>(), list[3].cast<gen0.String>(), list[4]);
   }
 }
 

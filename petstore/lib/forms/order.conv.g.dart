@@ -15,8 +15,7 @@ import 'package:petstore/forms/order.dart' as gen6;
 import 'package:dogs_forms/src/form.dart' as gen7;
 import 'package:petstore/forms/order.dart';
 
-class OrderFormDataConverter
-    extends gen.DefaultStructureConverter<gen6.OrderFormData> {
+class OrderFormDataConverter extends gen.DefaultStructureConverter<gen6.OrderFormData> {
   OrderFormDataConverter()
       : super(
             struct: const gen.DogStructure<gen6.OrderFormData>(
@@ -24,71 +23,18 @@ class OrderFormDataConverter
                 gen.StructureConformity.dataclass,
                 [
                   gen.DogStructureField(
-                      gen.QualifiedTerminal<gen0.Pet>(),
-                      gen.TypeToken<gen0.Pet>(),
-                      null,
-                      gen.IterableKind.none,
-                      'pet',
-                      false,
-                      true, [
-                    gen1.AutoFormField(
-                        factory: gen2.PetSelectorFormFieldFactory())
-                  ]),
-                  gen.DogStructureField(
-                      gen.QualifiedTerminal<gen3.int>(),
-                      gen.TypeToken<gen3.int>(),
-                      null,
-                      gen.IterableKind.none,
-                      'quantity',
-                      false,
-                      false, [
-                    gen1.AutoFormField(
-                        subtitle:
-                            'I don\'t know why this field exists, ask Swagger',
-                        initializer: gen4.ValueInitializer(1))
-                  ]),
-                  gen.DogStructureField(
-                      gen.QualifiedTerminal<gen3.DateTime>(),
-                      gen.TypeToken<gen3.DateTime>(),
-                      null,
-                      gen.IterableKind.none,
-                      'shipDate',
-                      false,
-                      true,
+                      gen.QualifiedTerminal<gen0.Pet>(), gen.TypeToken<gen0.Pet>(), null, gen.IterableKind.none, 'pet', false, true, [gen1.AutoFormField(factory: gen2.PetSelectorFormFieldFactory())]),
+                  gen.DogStructureField(gen.QualifiedTerminal<gen3.int>(), gen.TypeToken<gen3.int>(), null, gen.IterableKind.none, 'quantity', false, false,
+                      [gen1.AutoFormField(subtitle: 'I don\'t know why this field exists, ask Swagger', initializer: gen4.ValueInitializer(1))]),
+                  gen.DogStructureField(gen.QualifiedTerminal<gen3.DateTime>(), gen.TypeToken<gen3.DateTime>(), null, gen.IterableKind.none, 'shipDate', false, true,
                       [gen1.AutoFormField(title: 'Planned Shipping Data')]),
-                  gen.DogStructureField(
-                      gen.QualifiedTerminal<gen5.OrderStatus>(),
-                      gen.TypeToken<gen5.OrderStatus>(),
-                      null,
-                      gen.IterableKind.none,
-                      'status',
-                      false,
-                      true, [
-                    gen1.AutoFormField(
-                        initializer:
-                            gen4.ValueInitializer(gen5.OrderStatus.placed))
-                  ]),
-                  gen.DogStructureField(
-                      gen.QualifiedTerminal<gen3.bool>(),
-                      gen.TypeToken<gen3.bool>(),
-                      null,
-                      gen.IterableKind.none,
-                      'complete',
-                      false,
-                      false, [
-                    gen1.AutoFormField(
-                        title: 'Completed',
-                        subtitle: 'Has this pet already been delivered?',
-                        initializer: gen4.ValueInitializer(false))
-                  ])
+                  gen.DogStructureField(gen.QualifiedTerminal<gen5.OrderStatus>(), gen.TypeToken<gen5.OrderStatus>(), null, gen.IterableKind.none, 'status', false, true,
+                      [gen1.AutoFormField(initializer: gen4.ValueInitializer(gen5.OrderStatus.placed))]),
+                  gen.DogStructureField(gen.QualifiedTerminal<gen3.bool>(), gen.TypeToken<gen3.bool>(), null, gen.IterableKind.none, 'complete', false, false,
+                      [gen1.AutoFormField(title: 'Completed', subtitle: 'Has this pet already been delivered?', initializer: gen4.ValueInitializer(false))])
                 ],
-                [gen7.AutoForm(decorator: gen6.OrderFormDecorator())],
-                gen.ObjectFactoryStructureProxy<gen6.OrderFormData>(
-                    _activator,
-                    [_$pet, _$quantity, _$shipDate, _$status, _$complete],
-                    _values,
-                    _hash,
-                    _equals)));
+                [gen7.AutoForm()],
+                gen.ObjectFactoryStructureProxy<gen6.OrderFormData>(_activator, [_$pet, _$quantity, _$shipDate, _$status, _$complete], _values, _hash, _equals)));
 
   static dynamic _$pet(gen6.OrderFormData obj) => obj.pet;
 
@@ -100,34 +46,19 @@ class OrderFormDataConverter
 
   static dynamic _$complete(gen6.OrderFormData obj) => obj.complete;
 
-  static List<dynamic> _values(gen6.OrderFormData obj) =>
-      [obj.pet, obj.quantity, obj.shipDate, obj.status, obj.complete];
+  static List<dynamic> _values(gen6.OrderFormData obj) => [obj.pet, obj.quantity, obj.shipDate, obj.status, obj.complete];
 
   static gen6.OrderFormData _activator(List list) {
-    return gen6.OrderFormData(
-        pet: list[0],
-        quantity: list[1],
-        shipDate: list[2],
-        status: list[3],
-        complete: list[4]);
+    return gen6.OrderFormData(pet: list[0], quantity: list[1], shipDate: list[2], status: list[3], complete: list[4]);
   }
 
-  static int _hash(gen6.OrderFormData obj) =>
-      obj.pet.hashCode ^
-      obj.quantity.hashCode ^
-      obj.shipDate.hashCode ^
-      obj.status.hashCode ^
-      obj.complete.hashCode;
+  static int _hash(gen6.OrderFormData obj) => obj.pet.hashCode ^ obj.quantity.hashCode ^ obj.shipDate.hashCode ^ obj.status.hashCode ^ obj.complete.hashCode;
 
   static bool _equals(
     gen6.OrderFormData a,
     gen6.OrderFormData b,
   ) =>
-      (a.pet == b.pet &&
-          a.quantity == b.quantity &&
-          a.shipDate == b.shipDate &&
-          a.status == b.status &&
-          a.complete == b.complete);
+      (a.pet == b.pet && a.quantity == b.quantity && a.shipDate == b.shipDate && a.status == b.status && a.complete == b.complete);
 }
 
 class OrderFormDataBuilder {

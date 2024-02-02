@@ -6,7 +6,7 @@ import 'package:petstore/models/order.dart';
 import 'package:petstore/models/pet.dart';
 
 @serializable
-@AutoForm(decorator: OrderFormDecorator())
+@AutoForm()
 class OrderFormData with Dataclass<OrderFormData> {
   @AutoFormField(factory: PetSelectorFormFieldFactory())
   final Pet pet;
@@ -41,18 +41,4 @@ class OrderFormData with Dataclass<OrderFormData> {
       ], transformers: [
         Projections.move("pet.id", "petId"),
       ]);
-}
-
-class OrderFormDecorator extends FormColumnDecorator<OrderFormData> {
-  const OrderFormDecorator();
-
-  @override
-  void decorate(BuildContext context, FormStackConfigurator configurator) {
-    configurator.field("pet");
-    configurator.field("quantity");
-    configurator.field("shipDate");
-    configurator.field("status");
-    configurator.field("complete");
-    super.decorate(context, configurator);
-  }
 }

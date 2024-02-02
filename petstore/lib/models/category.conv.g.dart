@@ -16,26 +16,11 @@ class CategoryConverter extends gen.DefaultStructureConverter<gen1.Category> {
                 'Category',
                 gen.StructureConformity.dataclass,
                 [
-                  gen.DogStructureField(
-                      gen.QualifiedTerminal<gen0.int>(),
-                      gen.TypeToken<gen0.int>(),
-                      null,
-                      gen.IterableKind.none,
-                      'id',
-                      false,
-                      false, []),
-                  gen.DogStructureField(
-                      gen.QualifiedTerminal<gen0.String>(),
-                      gen.TypeToken<gen0.String>(),
-                      null,
-                      gen.IterableKind.none,
-                      'name',
-                      false,
-                      false, [])
+                  gen.DogStructureField(gen.QualifiedTerminal<gen0.int>(), gen.TypeToken<gen0.int>(), null, gen.IterableKind.none, 'id', false, false, []),
+                  gen.DogStructureField(gen.QualifiedTerminal<gen0.String>(), gen.TypeToken<gen0.String>(), null, gen.IterableKind.none, 'name', false, false, [])
                 ],
                 [],
-                gen.ObjectFactoryStructureProxy<gen1.Category>(
-                    _activator, [_$id, _$name], _values, _hash, _equals)));
+                gen.ObjectFactoryStructureProxy<gen1.Category>(_activator, [_$id, _$name], _values, _hash, _equals)));
 
   static dynamic _$id(gen1.Category obj) => obj.id;
 
@@ -112,26 +97,11 @@ class TagConverter extends gen.DefaultStructureConverter<gen1.Tag> {
                 'Tag',
                 gen.StructureConformity.dataclass,
                 [
-                  gen.DogStructureField(
-                      gen.QualifiedTerminal<gen0.int>(),
-                      gen.TypeToken<gen0.int>(),
-                      null,
-                      gen.IterableKind.none,
-                      'id',
-                      false,
-                      false, []),
-                  gen.DogStructureField(
-                      gen.QualifiedTerminal<gen0.String>(),
-                      gen.TypeToken<gen0.String>(),
-                      null,
-                      gen.IterableKind.none,
-                      'name',
-                      false,
-                      false, [])
+                  gen.DogStructureField(gen.QualifiedTerminal<gen0.int>(), gen.TypeToken<gen0.int>(), null, gen.IterableKind.none, 'id', false, false, []),
+                  gen.DogStructureField(gen.QualifiedTerminal<gen0.String>(), gen.TypeToken<gen0.String>(), null, gen.IterableKind.none, 'name', false, false, [])
                 ],
                 [],
-                gen.ObjectFactoryStructureProxy<gen1.Tag>(
-                    _activator, [_$id, _$name], _values, _hash, _equals)));
+                gen.ObjectFactoryStructureProxy<gen1.Tag>(_activator, [_$id, _$name], _values, _hash, _equals)));
 
   static dynamic _$id(gen1.Tag obj) => obj.id;
 

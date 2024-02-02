@@ -17,70 +17,15 @@ class OrderConverter extends gen.DefaultStructureConverter<gen2.Order> {
                 'Order',
                 gen.StructureConformity.dataclass,
                 [
-                  gen.DogStructureField(
-                      gen.QualifiedTerminal<gen0.String>(),
-                      gen.TypeToken<gen0.String>(),
-                      null,
-                      gen.IterableKind.none,
-                      'id',
-                      true,
-                      false,
-                      [gen1.Id()]),
-                  gen.DogStructureField(
-                      gen.QualifiedTerminal<gen0.String>(),
-                      gen.TypeToken<gen0.String>(),
-                      null,
-                      gen.IterableKind.none,
-                      'petId',
-                      false,
-                      false, []),
-                  gen.DogStructureField(
-                      gen.QualifiedTerminal<gen0.int>(),
-                      gen.TypeToken<gen0.int>(),
-                      null,
-                      gen.IterableKind.none,
-                      'quantity',
-                      false,
-                      false, []),
-                  gen.DogStructureField(
-                      gen.QualifiedTerminal<gen0.DateTime>(),
-                      gen.TypeToken<gen0.DateTime>(),
-                      null,
-                      gen.IterableKind.none,
-                      'shipDate',
-                      false,
-                      true, []),
-                  gen.DogStructureField(
-                      gen.QualifiedTerminal<gen2.OrderStatus>(),
-                      gen.TypeToken<gen2.OrderStatus>(),
-                      null,
-                      gen.IterableKind.none,
-                      'status',
-                      false,
-                      true, []),
-                  gen.DogStructureField(
-                      gen.QualifiedTerminal<gen0.bool>(),
-                      gen.TypeToken<gen0.bool>(),
-                      null,
-                      gen.IterableKind.none,
-                      'complete',
-                      false,
-                      false, [])
+                  gen.DogStructureField(gen.QualifiedTerminal<gen0.String>(), gen.TypeToken<gen0.String>(), null, gen.IterableKind.none, 'id', true, false, [gen1.Id()]),
+                  gen.DogStructureField(gen.QualifiedTerminal<gen0.String>(), gen.TypeToken<gen0.String>(), null, gen.IterableKind.none, 'petId', false, false, []),
+                  gen.DogStructureField(gen.QualifiedTerminal<gen0.int>(), gen.TypeToken<gen0.int>(), null, gen.IterableKind.none, 'quantity', false, false, []),
+                  gen.DogStructureField(gen.QualifiedTerminal<gen0.DateTime>(), gen.TypeToken<gen0.DateTime>(), null, gen.IterableKind.none, 'shipDate', false, true, []),
+                  gen.DogStructureField(gen.QualifiedTerminal<gen2.OrderStatus>(), gen.TypeToken<gen2.OrderStatus>(), null, gen.IterableKind.none, 'status', false, true, []),
+                  gen.DogStructureField(gen.QualifiedTerminal<gen0.bool>(), gen.TypeToken<gen0.bool>(), null, gen.IterableKind.none, 'complete', false, false, [])
                 ],
                 [],
-                gen.ObjectFactoryStructureProxy<gen2.Order>(
-                    _activator,
-                    [
-                      _$id,
-                      _$petId,
-                      _$quantity,
-                      _$shipDate,
-                      _$status,
-                      _$complete
-                    ],
-                    _values,
-                    _hash,
-                    _equals)));
+                gen.ObjectFactoryStructureProxy<gen2.Order>(_activator, [_$id, _$petId, _$quantity, _$shipDate, _$status, _$complete], _values, _hash, _equals)));
 
   static dynamic _$id(gen2.Order obj) => obj.id;
 
@@ -94,37 +39,19 @@ class OrderConverter extends gen.DefaultStructureConverter<gen2.Order> {
 
   static dynamic _$complete(gen2.Order obj) => obj.complete;
 
-  static List<dynamic> _values(gen2.Order obj) =>
-      [obj.id, obj.petId, obj.quantity, obj.shipDate, obj.status, obj.complete];
+  static List<dynamic> _values(gen2.Order obj) => [obj.id, obj.petId, obj.quantity, obj.shipDate, obj.status, obj.complete];
 
   static gen2.Order _activator(List list) {
-    return gen2.Order(
-        id: list[0],
-        petId: list[1],
-        quantity: list[2],
-        shipDate: list[3],
-        status: list[4],
-        complete: list[5]);
+    return gen2.Order(id: list[0], petId: list[1], quantity: list[2], shipDate: list[3], status: list[4], complete: list[5]);
   }
 
-  static int _hash(gen2.Order obj) =>
-      obj.id.hashCode ^
-      obj.petId.hashCode ^
-      obj.quantity.hashCode ^
-      obj.shipDate.hashCode ^
-      obj.status.hashCode ^
-      obj.complete.hashCode;
+  static int _hash(gen2.Order obj) => obj.id.hashCode ^ obj.petId.hashCode ^ obj.quantity.hashCode ^ obj.shipDate.hashCode ^ obj.status.hashCode ^ obj.complete.hashCode;
 
   static bool _equals(
     gen2.Order a,
     gen2.Order b,
   ) =>
-      (a.id == b.id &&
-          a.petId == b.petId &&
-          a.quantity == b.quantity &&
-          a.shipDate == b.shipDate &&
-          a.status == b.status &&
-          a.complete == b.complete);
+      (a.id == b.id && a.petId == b.petId && a.quantity == b.quantity && a.shipDate == b.shipDate && a.status == b.status && a.complete == b.complete);
 }
 
 class OrderBuilder {
@@ -200,17 +127,13 @@ extension OrderDogsExtension on gen2.Order {
   }
 }
 
-class OrderStatusConverter
-    extends gen.GeneratedEnumDogConverter<gen2.OrderStatus> {
+class OrderStatusConverter extends gen.GeneratedEnumDogConverter<gen2.OrderStatus> {
   @override
-  List<String> get values =>
-      gen2.OrderStatus.values.map((e) => e.name).toList();
+  List<String> get values => gen2.OrderStatus.values.map((e) => e.name).toList();
 
   @override
   gen.EnumToString<gen2.OrderStatus> get toStr => (e) => e!.name;
 
   @override
-  gen.EnumFromString<gen2.OrderStatus> get fromStr =>
-      (e) => gen2.OrderStatus.values
-          .firstWhereOrNullDogs((element) => element.name == e);
+  gen.EnumFromString<gen2.OrderStatus> get fromStr => (e) => gen2.OrderStatus.values.firstWhereOrNullDogs((element) => element.name == e);
 }
