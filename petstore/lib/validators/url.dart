@@ -1,12 +1,8 @@
 import 'package:dogs_core/dogs_core.dart';
 
-typedef _CacheEntry = ({
-  DogStructureField field,
-  bool isIterable
-});
+typedef _CacheEntry = ({DogStructureField field, bool isIterable});
 
 class UrlValidator extends StructureMetadata implements FieldValidator {
-
   const UrlValidator();
 
   @override
@@ -17,19 +13,16 @@ class UrlValidator extends StructureMetadata implements FieldValidator {
     }
     return AnnotationResult(messages: [
       AnnotationMessage(
-          target: record.field.name,
-          id: "url",
-          message: "Invalid URL",
+        target: record.field.name,
+        id: "url",
+        message: "Invalid URL",
       )
     ]);
   }
 
   @override
   getCachedValue(DogStructure structure, DogStructureField field) {
-    return (
-      field: field,
-      isIterable: field.iterableKind != IterableKind.none
-    );
+    return (field: field, isIterable: field.iterableKind != IterableKind.none);
   }
 
   @override
@@ -49,5 +42,4 @@ class UrlValidator extends StructureMetadata implements FieldValidator {
   bool validateSingle(String value) {
     return Uri.tryParse(value) != null;
   }
-
 }

@@ -3,10 +3,14 @@ import 'package:dogs_odm/dogs_odm.dart';
 import 'package:dogs_odm/memory_db.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:petstore/blocs/order_list_cubit.dart';
 import 'package:petstore/blocs/pet_list_cubit.dart';
 import 'package:petstore/dogs.g.dart';
+import 'package:petstore/repositories/orders.dart';
 import 'package:petstore/repositories/pets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:petstore/widgets/order_add_field.dart';
+import 'package:petstore/widgets/order_list_tile.dart';
 import 'package:petstore/widgets/pet_add_field.dart';
 import 'package:petstore/widgets/pet_list_tile.dart';
 import 'package:dogs_forms/dogs_forms.dart';
@@ -17,6 +21,9 @@ Future<void> main() async {
   installOdmConverters();
   OdmSystem.register<MemoryOdmSystem>(MemoryOdmSystem());
   await petsRepository.populate();
+  await ordersRepository.populate();
+  ordersRepository.findAll().then((value) => print(value));
+
   runApp(const MyApp());
 }
 
@@ -58,7 +65,19 @@ class Home extends StatelessWidget {
               return Column(children: state.pets.map(PetListTile.new).toList());
             },
           ),
-          const PetAddField()
+          const PetAddField(),
+          BlocBuilder<OrdersCubit, OrdersState>(
+            bloc: ordersCubit,
+            builder: (context, state) {
+              if (state.loading) {
+                return const Center(child: CircularProgressIndicator());
+              }
+              if (state.error != null) return Center(child: Text(state.error!));
+              return Column(
+                  children: state.orders.map(OrderListTile.new).toList());
+            },
+          ),
+          const OrderAddField()
         ],
       ),
     );

@@ -1,15 +1,12 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dogs_core/dogs_core.dart';
-import 'package:meta/meta.dart';
 import 'package:petstore/api/pets.dart';
 import 'package:petstore/dogs.g.dart';
 import 'package:petstore/models/pet.dart';
 
-
 final petListCubit = PetListCubit();
 
 class PetListCubit extends Cubit<PetListState> {
-
   PetListCubit() : super(PetListState(pets: [], loading: false)) {
     loadPets();
   }
@@ -35,8 +32,8 @@ class PetListCubit extends Cubit<PetListState> {
 
   void cycleStatus(Pet pet) async {
     var updatedPet = pet.rebuild((b) => b
-      ..status = PetStatus.values[(pet.status.index + 1) % PetStatus.values.length]
-    );
+      ..status =
+          PetStatus.values[(pet.status.index + 1) % PetStatus.values.length]);
     await petsApiClient.update(updatedPet);
     await loadPets();
   }
@@ -46,7 +43,6 @@ class PetListCubit extends Cubit<PetListState> {
     await loadPets();
   }
 }
-
 
 @serializable
 class PetListState with Dataclass<PetListState> {

@@ -6,7 +6,6 @@ import 'package:petstore/validators/url.dart';
 
 @serializable
 class Pet with Dataclass<Pet> {
-
   @Id()
   final String? id;
 
@@ -27,6 +26,9 @@ class Pet with Dataclass<Pet> {
     required this.tags,
     required this.status,
   });
+
+  String get searchableString =>
+      "$name ${category.name} ${tags.map((e) => e.name).join(" ")}";
 }
 
 @serializable

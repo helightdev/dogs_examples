@@ -20,17 +20,71 @@ class PetConverter extends gen.DefaultStructureConverter<gen5.Pet> {
                 'Pet',
                 gen.StructureConformity.dataclass,
                 [
-                  gen.DogStructureField(gen.QualifiedTerminal<gen0.String>(), gen.TypeToken<gen0.String>(), null, gen.IterableKind.none, 'id', true, false, [gen1.Id()]),
-                  gen.DogStructureField(gen.QualifiedTerminal<gen0.String>(), gen.TypeToken<gen0.String>(), null, gen.IterableKind.none, 'name', false, false, [gen2.notBlank]),
-                  gen.DogStructureField(gen.QualifiedTerminal<gen3.Category>(), gen.TypeToken<gen3.Category>(), null, gen.IterableKind.none, 'category', false, true, []),
-                  gen.DogStructureField(gen.QualifiedTypeTreeN<gen0.List<gen0.String>, gen0.List<dynamic>>([gen.QualifiedTerminal<gen0.String>()]), gen.TypeToken<gen0.String>(), null,
-                      gen.IterableKind.list, 'photoUrls', false, false, [gen4.UrlValidator()]),
-                  gen.DogStructureField(gen.QualifiedTypeTreeN<gen0.List<gen3.Tag>, gen0.List<dynamic>>([gen.QualifiedTerminal<gen3.Tag>()]), gen.TypeToken<gen3.Tag>(), null, gen.IterableKind.list,
-                      'tags', false, true, []),
-                  gen.DogStructureField(gen.QualifiedTerminal<gen5.PetStatus>(), gen.TypeToken<gen5.PetStatus>(), null, gen.IterableKind.none, 'status', false, true, [])
+                  gen.DogStructureField(
+                      gen.QualifiedTerminal<gen0.String>(),
+                      gen.TypeToken<gen0.String>(),
+                      null,
+                      gen.IterableKind.none,
+                      'id',
+                      true,
+                      false,
+                      [gen1.Id()]),
+                  gen.DogStructureField(
+                      gen.QualifiedTerminal<gen0.String>(),
+                      gen.TypeToken<gen0.String>(),
+                      null,
+                      gen.IterableKind.none,
+                      'name',
+                      false,
+                      false,
+                      [gen2.notBlank]),
+                  gen.DogStructureField(
+                      gen.QualifiedTerminal<gen3.Category>(),
+                      gen.TypeToken<gen3.Category>(),
+                      null,
+                      gen.IterableKind.none,
+                      'category',
+                      false,
+                      true, []),
+                  gen.DogStructureField(
+                      gen.QualifiedTypeTreeN<gen0.List<gen0.String>,
+                              gen0.List<dynamic>>(
+                          [gen.QualifiedTerminal<gen0.String>()]),
+                      gen.TypeToken<gen0.String>(),
+                      null,
+                      gen.IterableKind.list,
+                      'photoUrls',
+                      false,
+                      false,
+                      [gen4.UrlValidator()]),
+                  gen.DogStructureField(
+                      gen.QualifiedTypeTreeN<
+                          gen0.List<gen3.Tag>,
+                          gen0
+                          .List<dynamic>>([gen.QualifiedTerminal<gen3.Tag>()]),
+                      gen.TypeToken<gen3.Tag>(),
+                      null,
+                      gen.IterableKind.list,
+                      'tags',
+                      false,
+                      true,
+                      []),
+                  gen.DogStructureField(
+                      gen.QualifiedTerminal<gen5.PetStatus>(),
+                      gen.TypeToken<gen5.PetStatus>(),
+                      null,
+                      gen.IterableKind.none,
+                      'status',
+                      false,
+                      true, [])
                 ],
                 [],
-                gen.ObjectFactoryStructureProxy<gen5.Pet>(_activator, [_$id, _$name, _$category, _$photoUrls, _$tags, _$status], _values, _hash, _equals)));
+                gen.ObjectFactoryStructureProxy<gen5.Pet>(
+                    _activator,
+                    [_$id, _$name, _$category, _$photoUrls, _$tags, _$status],
+                    _values,
+                    _hash,
+                    _equals)));
 
   static dynamic _$id(gen5.Pet obj) => obj.id;
 
@@ -44,19 +98,37 @@ class PetConverter extends gen.DefaultStructureConverter<gen5.Pet> {
 
   static dynamic _$status(gen5.Pet obj) => obj.status;
 
-  static List<dynamic> _values(gen5.Pet obj) => [obj.id, obj.name, obj.category, obj.photoUrls, obj.tags, obj.status];
+  static List<dynamic> _values(gen5.Pet obj) =>
+      [obj.id, obj.name, obj.category, obj.photoUrls, obj.tags, obj.status];
 
   static gen5.Pet _activator(List list) {
-    return gen5.Pet(id: list[0], name: list[1], category: list[2], photoUrls: list[3].cast<gen0.String>(), tags: list[4].cast<gen3.Tag>(), status: list[5]);
+    return gen5.Pet(
+        id: list[0],
+        name: list[1],
+        category: list[2],
+        photoUrls: list[3].cast<gen0.String>(),
+        tags: list[4].cast<gen3.Tag>(),
+        status: list[5]);
   }
 
-  static int _hash(gen5.Pet obj) => obj.id.hashCode ^ obj.name.hashCode ^ obj.category.hashCode ^ gen.deepEquality.hash(obj.photoUrls) ^ gen.deepEquality.hash(obj.tags) ^ obj.status.hashCode;
+  static int _hash(gen5.Pet obj) =>
+      obj.id.hashCode ^
+      obj.name.hashCode ^
+      obj.category.hashCode ^
+      gen.deepEquality.hash(obj.photoUrls) ^
+      gen.deepEquality.hash(obj.tags) ^
+      obj.status.hashCode;
 
   static bool _equals(
     gen5.Pet a,
     gen5.Pet b,
   ) =>
-      (a.id == b.id && a.name == b.name && a.category == b.category && gen.deepEquality.equals(a.photoUrls, b.photoUrls) && gen.deepEquality.equals(a.tags, b.tags) && a.status == b.status);
+      (a.id == b.id &&
+          a.name == b.name &&
+          a.category == b.category &&
+          gen.deepEquality.equals(a.photoUrls, b.photoUrls) &&
+          gen.deepEquality.equals(a.tags, b.tags) &&
+          a.status == b.status);
 }
 
 class PetBuilder {
@@ -65,10 +137,13 @@ class PetBuilder {
       $values = List.filled(6, null);
     } else {
       $values = PetConverter._values($src);
+      this.$src = $src;
     }
   }
 
   late List<dynamic> $values;
+
+  gen5.Pet? $src;
 
   set id(gen0.String? value) {
     $values[0] = value;
@@ -106,7 +181,11 @@ class PetBuilder {
 
   gen5.PetStatus get status => $values[5];
 
-  gen5.Pet build() => PetConverter._activator($values);
+  gen5.Pet build() {
+    var instance = PetConverter._activator($values);
+
+    return instance;
+  }
 }
 
 extension PetDogsExtension on gen5.Pet {
@@ -133,5 +212,6 @@ class PetStatusConverter extends gen.GeneratedEnumDogConverter<gen5.PetStatus> {
   gen.EnumToString<gen5.PetStatus> get toStr => (e) => e!.name;
 
   @override
-  gen.EnumFromString<gen5.PetStatus> get fromStr => (e) => gen5.PetStatus.values.firstWhereOrNullDogs((element) => element.name == e);
+  gen.EnumFromString<gen5.PetStatus> get fromStr => (e) => gen5.PetStatus.values
+      .firstWhereOrNullDogs((element) => element.name == e);
 }

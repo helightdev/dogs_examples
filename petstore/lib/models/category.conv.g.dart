@@ -16,11 +16,26 @@ class CategoryConverter extends gen.DefaultStructureConverter<gen1.Category> {
                 'Category',
                 gen.StructureConformity.dataclass,
                 [
-                  gen.DogStructureField(gen.QualifiedTerminal<gen0.int>(), gen.TypeToken<gen0.int>(), null, gen.IterableKind.none, 'id', false, false, []),
-                  gen.DogStructureField(gen.QualifiedTerminal<gen0.String>(), gen.TypeToken<gen0.String>(), null, gen.IterableKind.none, 'name', false, false, [])
+                  gen.DogStructureField(
+                      gen.QualifiedTerminal<gen0.int>(),
+                      gen.TypeToken<gen0.int>(),
+                      null,
+                      gen.IterableKind.none,
+                      'id',
+                      false,
+                      false, []),
+                  gen.DogStructureField(
+                      gen.QualifiedTerminal<gen0.String>(),
+                      gen.TypeToken<gen0.String>(),
+                      null,
+                      gen.IterableKind.none,
+                      'name',
+                      false,
+                      false, [])
                 ],
                 [],
-                gen.ObjectFactoryStructureProxy<gen1.Category>(_activator, [_$id, _$name], _values, _hash, _equals)));
+                gen.ObjectFactoryStructureProxy<gen1.Category>(
+                    _activator, [_$id, _$name], _values, _hash, _equals)));
 
   static dynamic _$id(gen1.Category obj) => obj.id;
 
@@ -47,10 +62,13 @@ class CategoryBuilder {
       $values = List.filled(2, null);
     } else {
       $values = CategoryConverter._values($src);
+      this.$src = $src;
     }
   }
 
   late List<dynamic> $values;
+
+  gen1.Category? $src;
 
   set id(gen0.int value) {
     $values[0] = value;
@@ -64,7 +82,11 @@ class CategoryBuilder {
 
   gen0.String get name => $values[1];
 
-  gen1.Category build() => CategoryConverter._activator($values);
+  gen1.Category build() {
+    var instance = CategoryConverter._activator($values);
+
+    return instance;
+  }
 }
 
 extension CategoryDogsExtension on gen1.Category {
@@ -90,11 +112,26 @@ class TagConverter extends gen.DefaultStructureConverter<gen1.Tag> {
                 'Tag',
                 gen.StructureConformity.dataclass,
                 [
-                  gen.DogStructureField(gen.QualifiedTerminal<gen0.int>(), gen.TypeToken<gen0.int>(), null, gen.IterableKind.none, 'id', false, false, []),
-                  gen.DogStructureField(gen.QualifiedTerminal<gen0.String>(), gen.TypeToken<gen0.String>(), null, gen.IterableKind.none, 'name', false, false, [])
+                  gen.DogStructureField(
+                      gen.QualifiedTerminal<gen0.int>(),
+                      gen.TypeToken<gen0.int>(),
+                      null,
+                      gen.IterableKind.none,
+                      'id',
+                      false,
+                      false, []),
+                  gen.DogStructureField(
+                      gen.QualifiedTerminal<gen0.String>(),
+                      gen.TypeToken<gen0.String>(),
+                      null,
+                      gen.IterableKind.none,
+                      'name',
+                      false,
+                      false, [])
                 ],
                 [],
-                gen.ObjectFactoryStructureProxy<gen1.Tag>(_activator, [_$id, _$name], _values, _hash, _equals)));
+                gen.ObjectFactoryStructureProxy<gen1.Tag>(
+                    _activator, [_$id, _$name], _values, _hash, _equals)));
 
   static dynamic _$id(gen1.Tag obj) => obj.id;
 
@@ -121,10 +158,13 @@ class TagBuilder {
       $values = List.filled(2, null);
     } else {
       $values = TagConverter._values($src);
+      this.$src = $src;
     }
   }
 
   late List<dynamic> $values;
+
+  gen1.Tag? $src;
 
   set id(gen0.int value) {
     $values[0] = value;
@@ -138,7 +178,11 @@ class TagBuilder {
 
   gen0.String get name => $values[1];
 
-  gen1.Tag build() => TagConverter._activator($values);
+  gen1.Tag build() {
+    var instance = TagConverter._activator($values);
+
+    return instance;
+  }
 }
 
 extension TagDogsExtension on gen1.Tag {

@@ -3,9 +3,8 @@ import 'package:petstore/blocs/pet_list_cubit.dart';
 import 'package:petstore/models/pet.dart';
 
 class PetListTile extends StatelessWidget {
-
   final Pet pet;
-  
+
   const PetListTile(this.pet, {super.key});
 
   @override

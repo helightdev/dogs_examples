@@ -10,20 +10,46 @@ import 'package:petstore/models/pet.dart' as gen1;
 import 'package:petstore/blocs/pet_list_cubit.dart' as gen2;
 import 'package:petstore/blocs/pet_list_cubit.dart';
 
-class PetListStateConverter extends gen.DefaultStructureConverter<gen2.PetListState> {
+class PetListStateConverter
+    extends gen.DefaultStructureConverter<gen2.PetListState> {
   PetListStateConverter()
       : super(
             struct: const gen.DogStructure<gen2.PetListState>(
                 'PetListState',
                 gen.StructureConformity.dataclass,
                 [
-                  gen.DogStructureField(gen.QualifiedTypeTreeN<gen0.List<gen1.Pet>, gen0.List<dynamic>>([gen.QualifiedTerminal<gen1.Pet>()]), gen.TypeToken<gen1.Pet>(), null, gen.IterableKind.list,
-                      'pets', false, true, []),
-                  gen.DogStructureField(gen.QualifiedTerminal<gen0.bool>(), gen.TypeToken<gen0.bool>(), null, gen.IterableKind.none, 'loading', false, false, []),
-                  gen.DogStructureField(gen.QualifiedTerminal<gen0.String>(), gen.TypeToken<gen0.String>(), null, gen.IterableKind.none, 'error', true, false, [])
+                  gen.DogStructureField(
+                      gen.QualifiedTypeTreeN<
+                          gen0.List<gen1.Pet>,
+                          gen0
+                          .List<dynamic>>([gen.QualifiedTerminal<gen1.Pet>()]),
+                      gen.TypeToken<gen1.Pet>(),
+                      null,
+                      gen.IterableKind.list,
+                      'pets',
+                      false,
+                      true,
+                      []),
+                  gen.DogStructureField(
+                      gen.QualifiedTerminal<gen0.bool>(),
+                      gen.TypeToken<gen0.bool>(),
+                      null,
+                      gen.IterableKind.none,
+                      'loading',
+                      false,
+                      false, []),
+                  gen.DogStructureField(
+                      gen.QualifiedTerminal<gen0.String>(),
+                      gen.TypeToken<gen0.String>(),
+                      null,
+                      gen.IterableKind.none,
+                      'error',
+                      true,
+                      false, [])
                 ],
                 [],
-                gen.ObjectFactoryStructureProxy<gen2.PetListState>(_activator, [_$pets, _$loading, _$error], _values, _hash, _equals)));
+                gen.ObjectFactoryStructureProxy<gen2.PetListState>(_activator,
+                    [_$pets, _$loading, _$error], _values, _hash, _equals)));
 
   static dynamic _$pets(gen2.PetListState obj) => obj.pets;
 
@@ -31,19 +57,26 @@ class PetListStateConverter extends gen.DefaultStructureConverter<gen2.PetListSt
 
   static dynamic _$error(gen2.PetListState obj) => obj.error;
 
-  static List<dynamic> _values(gen2.PetListState obj) => [obj.pets, obj.loading, obj.error];
+  static List<dynamic> _values(gen2.PetListState obj) =>
+      [obj.pets, obj.loading, obj.error];
 
   static gen2.PetListState _activator(List list) {
-    return gen2.PetListState(pets: list[0].cast<gen1.Pet>(), loading: list[1], error: list[2]);
+    return gen2.PetListState(
+        pets: list[0].cast<gen1.Pet>(), loading: list[1], error: list[2]);
   }
 
-  static int _hash(gen2.PetListState obj) => gen.deepEquality.hash(obj.pets) ^ obj.loading.hashCode ^ obj.error.hashCode;
+  static int _hash(gen2.PetListState obj) =>
+      gen.deepEquality.hash(obj.pets) ^
+      obj.loading.hashCode ^
+      obj.error.hashCode;
 
   static bool _equals(
     gen2.PetListState a,
     gen2.PetListState b,
   ) =>
-      (gen.deepEquality.equals(a.pets, b.pets) && a.loading == b.loading && a.error == b.error);
+      (gen.deepEquality.equals(a.pets, b.pets) &&
+          a.loading == b.loading &&
+          a.error == b.error);
 }
 
 class PetListStateBuilder {
@@ -52,10 +85,13 @@ class PetListStateBuilder {
       $values = List.filled(3, null);
     } else {
       $values = PetListStateConverter._values($src);
+      this.$src = $src;
     }
   }
 
   late List<dynamic> $values;
+
+  gen2.PetListState? $src;
 
   set pets(gen0.List<gen1.Pet> value) {
     $values[0] = value;
@@ -75,7 +111,11 @@ class PetListStateBuilder {
 
   gen0.String? get error => $values[2];
 
-  gen2.PetListState build() => PetListStateConverter._activator($values);
+  gen2.PetListState build() {
+    var instance = PetListStateConverter._activator($values);
+
+    return instance;
+  }
 }
 
 extension PetListStateDogsExtension on gen2.PetListState {

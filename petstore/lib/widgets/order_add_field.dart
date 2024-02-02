@@ -1,18 +1,18 @@
 import 'package:dogs_forms/dogs_forms.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
-import 'package:petstore/blocs/pet_list_cubit.dart';
-import 'package:petstore/forms/pet.dart';
+import 'package:petstore/blocs/order_list_cubit.dart';
+import 'package:petstore/forms/order.dart';
 
-class PetAddField extends StatefulWidget {
-  const PetAddField({super.key});
+class OrderAddField extends StatefulWidget {
+  const OrderAddField({super.key});
 
   @override
-  State<PetAddField> createState() => _PetAddFieldState();
+  State<OrderAddField> createState() => _OrderAddFieldState();
 }
 
-class _PetAddFieldState extends State<PetAddField> {
-  var formRef = DogsFormRef<PetFormData>();
+class _OrderAddFieldState extends State<OrderAddField> {
+  var formRef = DogsFormRef<OrderFormData>();
 
   @override
   Widget build(BuildContext context) {
@@ -43,16 +43,16 @@ class _PetAddFieldState extends State<PetAddField> {
   Column _buildExpanded() {
     return Column(
       children: [
-        DogsForm<PetFormData>(reference: formRef),
+        DogsForm<OrderFormData>(reference: formRef),
         const SizedBox(height: 8),
         ElevatedButton(
             onPressed: () {
-              var petData = formRef.read();
-              if (petData != null) {
-                var pet = petData.toPet();
-                petListCubit.addPet(pet);
+              var orderData = formRef.read();
+              if (orderData != null) {
+                var pet = orderData.toOrder();
+                ordersCubit.addOrder(pet);
                 setState(() {
-                  formRef = DogsFormRef<PetFormData>();
+                  formRef = DogsFormRef<OrderFormData>();
                 });
               }
             },
@@ -90,7 +90,7 @@ class _PetAddFieldState extends State<PetAddField> {
               width: 8,
             ),
             Text(
-              "Add a new pet",
+              "Add a new Order",
               style: Theme.of(context).textTheme.titleMedium,
             ),
             const Spacer(),
